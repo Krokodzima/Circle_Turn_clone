@@ -19,6 +19,7 @@ public class BallScripts : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy")
         {
+            PlayerPrefs.SetInt("Score", score); // сохранение очков игрока
             SceneManager.LoadScene(2);
         }
 
