@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BallScripts : MonoBehaviour
 {
@@ -18,10 +19,16 @@ public class BallScripts : MonoBehaviour
 
         if (other.gameObject.tag == "Enemy")
         {
-            Destroy(other.gameObject);
-            score = 0;
+            SceneManager.LoadScene(2);
         }
 
+        /* // обнулять счетчик при контакте с врагом
+         if (other.gameObject.tag == "Enemy")
+         {
+             Destroy(other.gameObject);
+             score = 0;
+          }
+        */
     }
 
     void Update()
