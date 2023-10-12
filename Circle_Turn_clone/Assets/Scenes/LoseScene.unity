@@ -241,6 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e1b205823b6c44ca5412290e8658f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 329469262}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
