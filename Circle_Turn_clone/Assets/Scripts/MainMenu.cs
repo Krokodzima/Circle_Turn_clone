@@ -29,4 +29,8 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1); // (0) - MainMenu, (1) - PlayScene, (2) - Lose
     }
 
+    public void ToShop()
+    {
+        SceneManager.LoadScene(3);
+    }
 }

@@ -7,14 +7,24 @@ using UnityEngine.SceneManagement;
 public class BallScripts : MonoBehaviour
 {
     public int score;
+    public bool isMulti;
     [SerializeField] Text scoreText;
+
+    public void Start()
+    {
+        isMulti = PlayerPrefs.GetInt("isMulti") == 1 ? true : false; // isMulti берет значение из PlayerPrefs, если там 1, то true, иначе false
+    }
 
     private void OnTriggerEnter2D(Collider2D other) // метод срабатывает, когда объект игрока входит в зону триггера другого объекта.
     {
         if (other.gameObject.tag == "Bonus")
         {
             Destroy(other.gameObject);
-            score++;
+            if (isMulti)
+                score += 2;
+            else
+                score++;
+
         }
 
         if (other.gameObject.tag == "Enemy")
