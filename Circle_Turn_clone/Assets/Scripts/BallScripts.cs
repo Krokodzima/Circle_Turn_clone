@@ -10,6 +10,8 @@ public class BallScripts : MonoBehaviour
     public bool isMulti;
     [SerializeField] Text scoreText;
 
+    public GameObject bonusEffect; // объ€вили bonusEffect
+
     public void Start()
     {
         isMulti = PlayerPrefs.GetInt("isMulti") == 1 ? true : false; // isMulti берет значение из PlayerPrefs, если там 1, то true, иначе false
@@ -20,6 +22,7 @@ public class BallScripts : MonoBehaviour
         if (other.gameObject.tag == "Bonus")
         {
             Destroy(other.gameObject);
+            Instantiate(bonusEffect, transform.position, Quaternion.identity); // создает новую копию объекта "bonusEffect" в позиции, указанной в "transform.position" (на месте шарика), без какого-либо поворота
             if (isMulti)
                 score += 2;
             else
